@@ -93,18 +93,10 @@ enable_copy_code_button: true
 
 # By default, consuming the theme as a gem leaves mermaid disabled; it is opt-in
 mermaid:
-  # Version of mermaid library
-  # Pick an available version from https://cdn.jsdelivr.net/npm/mermaid/
-  version: "9.1.6"
-  # Put any additional configuration, such as setting the theme, in _includes/mermaid_config.js
-  # See also docs/ui-components/code
-  # To load mermaid from a local library, also use the `path` key to specify the location of the library; e.g.
-  # for (v10+):
-  # path: "/assets/js/mermaid.esm.min.mjs"
-  # for (<v10):
-  # path: "/assets/js/mermaid.min.js"
-  # Note: copy both `mermaid.esm.min.mjs` (v10+) or `mermaid.min.js` (<v10) and the associated `.map` file from the specified version of `mermaid/dist` to `/assets/js/`.
-
+  version: "9.4.3"
+  path: "https://cdn.jsdelivr.net/npm/mermaid@9.4.3/dist/mermaid.min.js"
+  enabled: true
+  
 # Enable or disable heading anchors
 heading_anchors: true
 
@@ -123,8 +115,8 @@ aux_links_new_tab: true
 nav_enabled: true
 
 # Sort order for navigation links
-# nav_sort: case_insensitive # default, equivalent to nil
-nav_sort: case_sensitive # Capital letters sorted before lowercase
+nav_sort: case_insensitive # default, equivalent to nil
+# nav_sort: case_sensitive # Capital letters sorted before lowercase
 
 # External navigation links
 nav_external_links:
@@ -194,7 +186,7 @@ plugins:
 kramdown:
   syntax_highlighter_opts:
     block:
-      line_numbers: false
+      line_numbers: true
 
 compress_html:
   clippings: all
@@ -203,8 +195,8 @@ compress_html:
   startings: []
   blanklines: false
   profile: false
-  # ignore:
-  #   envs: all
+  ignore:
+    envs: all
 
 sass:
   quiet_deps: true # https://github.com/just-the-docs/just-the-docs/issues/1541
